@@ -1,0 +1,86 @@
+@headerFonts: 'WireOne', Helvetica, Arial, sans-serif;
+@bodyFonts: 'Raleway', Helvetica, Arial, sans-serif;
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+.gradient (@startColor: #eee, @endColor: white) {
+    background-color: @startColor;
+    background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background: -webkit-linear-gradient(top, @startColor, @endColor);
+    background: -moz-linear-gradient(top, @startColor, @endColor);
+    background: -ms-linear-gradient(top, @startColor, @endColor);
+    background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.prevent-copy-paste {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+@font-face {
+    font-family: 'WireOne';
+    font-style: normal;
+    font-weight: 400;
+    src: local('WireOne'), url(../fonts/WireOne.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(../fonts/Raleway-Light.ttf) format('truetype');
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: @headerFonts;
+    color: #fff;
+}
+
+body {
+    .gradient(CadetBlue, Black);
+    .prevent-copy-paste();
+    background-attachment:fixed;
+    font-family: @bodyFonts;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+nav {
+    .brand-logo {
+        font-family: @headerFonts;
+        font-size: 3rem;
+        sup {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.preloader-wrapper.big {
+    width: 120px;
+    height: 120px;
+    width: 70vw;
+    height: 70vw;
+}
